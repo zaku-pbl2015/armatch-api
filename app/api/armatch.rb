@@ -6,5 +6,6 @@ module Armatch
 
     # mout API::localhost:3000/api/***で作るAPIを記述
     mount API::Students
+    mount API::Corporations
   end
 end

@@ -10,5 +10,15 @@
   <%= @corporation.outline %>
 </p>
 
+<p>
+  <strong>Email:</strong>
+  <%= @corporation.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @corporation.password %>
+</p>
+
 <%= link_to 'Edit', edit_corporation_path(@corporation) %> |
 <%= link_to 'Back', corporations_path %>

@@ -3,7 +3,11 @@
 one:
   name: MyString
   outline: MyText
+  email: MyString
+  password: MyString
 
 two:
   name: MyString
   outline: MyText
+  email: MyString
+  password: MyString

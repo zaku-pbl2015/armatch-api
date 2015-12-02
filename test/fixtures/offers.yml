@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  detail: MyText
+  corporation_id: 1
+  wanted: false
+  limited_on: 2015-12-02
+  category_id: 1
+
+two:
+  title: 
+  detail: MyText
+  corporation_id: 1
+  wanted: false
+  limited_on: 2015-12-02
+  category_id: 1

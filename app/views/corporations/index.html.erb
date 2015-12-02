@@ -7,6 +7,8 @@
     <tr>
       <th>Name</th>
       <th>Outline</th>
+      <th>Email</th>
+      <th>Password</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= corporation.name %></td>
         <td><%= corporation.outline %></td>
+        <td><%= corporation.email %></td>
+        <td><%= corporation.password %></td>
         <td><%= link_to 'Show', corporation %></td>
         <td><%= link_to 'Edit', edit_corporation_path(corporation) %></td>
         <td><%= link_to 'Destroy', corporation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

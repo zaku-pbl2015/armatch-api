@@ -61,6 +61,18 @@ class StudentsController < ApplicationController
     end
   end
 
+  # skillカテゴリーの記述
+  def test
+  @other = Other.new
+  @other.skillarray = ["php","ruby","R"]
+  @other.save
+
+  respond_to do |format|
+    format.html
+    format.json { render json: @other }
+  end
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
@@ -69,6 +81,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :age)
+      params.require(:student).permit(:name, :email, :password, :skill, :apeat)
     end
 end

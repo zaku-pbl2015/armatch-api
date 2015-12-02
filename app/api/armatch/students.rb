@@ -15,15 +15,18 @@ module Armatch
         @students = Student.find(params[:id])
       end
 
-=begin
+#=begin
 #学生の情報更新API途中
       desc "update student"
       params do
-        requires :id, type Integer, desc: "Student id"
+        requires :id, type: Integer, desc: "Student id"
+        requires :name, type: String, desc: "Student name"
+        requires :age, type: Integer, desc: "Student old"
       end
-      post ':id' do
+      post do
+        @students = Student.update(params[:id] => {name: params[:name], age: params[:age]})
       end
-=end
+#=end
     end
   end
 end

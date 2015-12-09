@@ -15,7 +15,7 @@ module Armatch
         @students = Student.find(params[:id])
       end
 
-      desc "update student"
+      desc "create student"
       params do
         requires :name    , type: String, desc: "Student name"
         requires :email   , type: String, desc: "Student email"
@@ -30,6 +30,26 @@ module Armatch
           name:     params[:name],
           email:    params[:email],
           password: Digest::SHA1.hexdigest(params[:password]),
+          skill:    params[:skill],
+          apeal:    params[:apeal]
+        })
+      end
+
+      desc "update student"
+      params do
+        requires :id      , type: Integer, desc: "Student id"
+        requires :name    , type: String , desc: "Student name"
+        requires :email   , type: String , desc: "Student email"
+        requires :password, type: String , desc: "password"
+        requires :skill   , type: String , desc: "skill"
+        requires :apeal   , type: String , desc: "apeal point"
+      end
+      put ':id' do
+        require 'digest/sha1'
+
+        Student.find(params[:id]).update!({
+          name:     params[:name],
+          email:    params[:email],
           skill:    params[:skill],
           apeal:    params[:apeal]
         })

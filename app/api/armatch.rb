@@ -8,5 +8,6 @@ module Armatch
     mount API::Students
     mount API::Corporations
     mount API::Offers
+    mount API::Entries
   end
 end

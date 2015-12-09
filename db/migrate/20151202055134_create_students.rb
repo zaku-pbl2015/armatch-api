@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :name, length: { maximum: 16}
       t.string :email, length: { maximum: 25}
       t.string :password, length: { maximum: 16}
-      t.text :skillarray
+      t.text :skill
       t.text :apeal
 
       t.timestamps null: false

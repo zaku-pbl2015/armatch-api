@@ -40,13 +40,10 @@ module Armatch
         requires :id      , type: Integer, desc: "Student id"
         requires :name    , type: String , desc: "Student name"
         requires :email   , type: String , desc: "Student email"
-        requires :password, type: String , desc: "password"
         requires :skill   , type: String , desc: "skill"
         requires :apeal   , type: String , desc: "apeal point"
       end
       put ':id' do
-        require 'digest/sha1'
-
         Student.find(params[:id]).update!({
           name:     params[:name],
           email:    params[:email],

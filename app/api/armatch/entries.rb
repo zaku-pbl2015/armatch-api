@@ -24,10 +24,7 @@ module Armatch
         requires :offer_id, type: Integer, desc: "offer id"
       end
       put ':offer_id' do
-        @entries = Entry.find_by(offer_id: params[:offer_id], student_id: 100)
-        @entries.cancel_flag = true
-        @entries.save
-        #@entries.update_attribute(:cancel_flag, "1")
+        Entry.find_by(offer_id: params[:offer_id], student_id: 100).update!({cancel_flag: true})
         status 200
       end
 #=end

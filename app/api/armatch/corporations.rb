@@ -32,6 +32,21 @@ module Armatch
           password: Digest::SHA1.hexdigest(params[:password])
         })
       end
+
+      desc "create corporation"
+      params do
+        requires :id      , type: Integer, desc: "Corporation ID"
+        requires :name    , type: String , desc: "Corporation name"
+        requires :outline , type: String , desc: "Corporation outline"
+        requires :email   , type: String , desc: "Email"
+      end
+      put ':id' do
+        Corporation.find(params[:id]).update!({
+          name: params[:name],
+          outline: params[:outline],
+          email: params[:email]
+        })
+      end
     end
   end
 end

@@ -25,13 +25,32 @@ module Armatch
         requires :category_id   , type: Integer, desc: "Category ID"
       end
       post do
-        require 'date'
-
         Offer.create!({
           title:          params[:title],
           detail:         params[:detail],
           corporation_id: params[:corporation_id],
           wanted:         params[:wanted].nil? ? true : params[:wanted],
+          limited:        params[:limited],
+          category_id:    params[:category_id]
+        })
+      end
+
+      desc "update offer"
+      params do
+        requires :id            , type: Integer, desc: "Offer ID"
+        requires :title         , type: String , desc: "Offer title"
+        requires :detail        , type: String , desc: "Offer detail"
+        requires :corporation_id, type: Integer, desc: "Corporation id"
+        requires :wanted        , type: Boolean, desc: "Offer wanted"
+        requires :limited       , type: String , desc: "Offer limited"
+        requires :category_id   , type: Integer, desc: "Category ID"
+      end
+      put ':id' do
+        Offer.find(params[:id]).update!({
+          title:          params[:title],
+          detail:         params[:detail],
+          corporation_id: params[:corporation_id],
+          wanted:         params[:wanted],
           limited:        params[:limited],
           category_id:    params[:category_id]
         })

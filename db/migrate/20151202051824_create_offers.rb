@@ -5,7 +5,7 @@ class CreateOffers < ActiveRecord::Migration
       t.text :detail
       t.integer :corporation_id
       t.boolean :wanted
-      t.date :limited_on
+      t.date :limited
       t.integer :category_id
 
       t.timestamps null: false

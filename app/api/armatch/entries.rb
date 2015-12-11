@@ -6,8 +6,16 @@ module Armatch
       params do
         requires :student_id, type: Integer, desc: "student id"
       end
-      get ':student_id' do
+      get '/offers/:student_id' do
         @entries = Entry.where(student_id: params[:student_id])
+      end
+
+      desc "Return entried students information"
+      params do
+        requires :offer_id, type: Integer, desc: "offer id"
+      end
+      get '/students/:offer_id' do
+        @entries = Entry.where(offer_id: params[:offer_id])
       end
 
       desc "entries part time job"
@@ -18,7 +26,7 @@ module Armatch
         Entry.create(offer_id: params[:offer_id], student_id: 100)
         status 201
       end
-#=begin
+
       desc "destroy entry information(cancel_flag changes to 1)"
       params do
         requires :offer_id, type: Integer, desc: "offer id"
@@ -27,7 +35,7 @@ module Armatch
         Entry.find_by(offer_id: params[:offer_id], student_id: 100).update!({cancel_flag: true})
         status 200
       end
-#=end
+
     end
   end
 end

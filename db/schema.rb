@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20151209042742) do
     t.text     "detail",         limit: 65535
     t.integer  "corporation_id", limit: 4
     t.boolean  "wanted"
-    t.date     "limited_on"
+    t.date     "limited"
     t.integer  "category_id",    limit: 4
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false

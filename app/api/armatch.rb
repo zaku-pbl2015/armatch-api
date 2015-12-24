@@ -9,5 +9,6 @@ module Armatch
     mount API::Corporations
     mount API::Offers
     mount API::Entries
+    mount API::Categories
   end
 end

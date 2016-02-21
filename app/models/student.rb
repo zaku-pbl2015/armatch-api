@@ -1,3 +1,3 @@
 class Student < ActiveRecord::Base
-  serialize :skillarray
+  serialize :skill
 end

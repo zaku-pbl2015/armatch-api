@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :entries
-  resources :corporations
-  resources :students
-  resources :offers
   mount Armatch::API => '/'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
